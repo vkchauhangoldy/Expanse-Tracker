@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.text-color {
+  color: #111;
+}
+input,
+select {
+  padding: 7px;
+  outline: 0;
+  border: 1px solid gray;
+  border-radius: 7px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.btn {
+  padding: 8px 24px;
+  outline: 0;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+.save-btn {
+  background-color: #f76707;
+}
+.cancel-btn {
+  background-color: rgb(199, 195, 195);
+}
+.form-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-around;
+}
+.form-controls input,
+button,
+select,
+option {
+  width: 50%;
+}
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 350px;
+  max-width: 400px;
+  margin: auto;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

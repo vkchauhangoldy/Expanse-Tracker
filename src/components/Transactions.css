@@ -1,0 +1,114 @@
+.transactions-container {
+  background: #fff;
+  padding: 10px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.transactions-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.transactions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fafafa;
+  padding: 6px 12px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  min-height: 70px;
+  transition: background 0.2s ease;
+}
+
+.transaction-item:hover {
+  background: #f0f8ff;
+}
+
+.transaction-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  margin-right: 12px;
+}
+
+.transaction-details {
+  flex: 1;
+  min-width: 150px;
+}
+
+.transaction-details h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #222;
+}
+
+.transaction-details p {
+  margin: 2px 0 0;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.transaction-amount {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-right: 15px;
+  color: #ff8042;
+}
+
+.transaction-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.action-icon {
+  cursor: pointer;
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.action-icon:hover {
+  transform: scale(1.2);
+}
+
+.action-icon.edit {
+  color: #333;
+}
+
+.action-icon.delete {
+  color: red;
+}
+
+/* 🔹 Scrollbar styling */
+.transactions-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.transactions-list::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 8px;
+}
+
+.transactions-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
