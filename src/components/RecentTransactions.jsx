@@ -30,7 +30,7 @@ const RecentTransactions = ({ onEdit }) => {
                             </div>
                             <div className="transaction-details">
                                 <h4>{tx.title}</h4>
-                                <p>{tx.date} • {tx.category}</p>
+                                <p>{tx.date}</p>
                             </div>
                             <div className="transaction-amount">₹{tx.amount}</div>
                             <div className="transaction-actions">
