@@ -8,7 +8,7 @@ const loadExpenses = () => {
 
 const loadWallet = () => {
     const data = localStorage.getItem("walletBalance");
-    return data ? JSON.parse(data) : 0;
+    return data ? JSON.parse(data) : 5000;
 };
 
 const loadTotalExpenses = () => {
@@ -39,19 +39,40 @@ const transactionsSlice = createSlice({
     name: "transactions",
     initialState,
     reducers: {
+        // addIncome: (state, action) => {
+        //     state.walletBalance += Number(action.payload);
+        //     saveWallet(state.walletBalance);
+        // },
+        // addExpense: (state, action) => {
+        //     state.expenses.push(action.payload);
+        //     state.walletBalance -= action.payload.amount;
+        //     state.totalExpenses += action.payload.amount;
+
+        //     saveExpenses(state.expenses);
+        //     saveWallet(state.walletBalance);
+        //     saveTotalExpenses(state.totalExpenses);
+        // },
         addIncome: (state, action) => {
-            state.walletBalance += action.payload;
+            state.walletBalance += Number(action.payload); // ensure numeric
             saveWallet(state.walletBalance);
         },
         addExpense: (state, action) => {
-            state.expenses.push(action.payload);
-            state.walletBalance -= action.payload.amount;
-            state.totalExpenses += action.payload.amount;
+            const expense = {
+                id: action.payload.id || Date.now(),
+                title: action.payload.title,
+                amount: Number(action.payload.amount),
+                category: action.payload.category || "general",
+            };
+
+            state.expenses.push(expense);
+            state.walletBalance -= expense.amount;
+            state.totalExpenses += expense.amount;
 
             saveExpenses(state.expenses);
             saveWallet(state.walletBalance);
             saveTotalExpenses(state.totalExpenses);
         },
+
         editExpense: (state, action) => {
             const { id, updatedData } = action.payload;
             const index = state.expenses.findIndex((e) => e.id === id);
